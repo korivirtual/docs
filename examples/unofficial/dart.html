@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js nekosbest">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Dart - nekos.best API</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The official nekos.best API documentation.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#e91e63" />
+        <meta property="og:image" content="https://media.discordapp.net/attachments/850827086536376370/930257672534650930/N.png">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "nekosbest" : "nekosbest";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('nekosbest')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">API</li><li class="chapter-item expanded "><a href="../../api/reference.html"><strong aria-hidden="true">1.</strong> Reference</a></li><li class="chapter-item expanded "><a href="../../api/endpoints.html"><strong aria-hidden="true">2.</strong> Endpoints</a></li><li class="chapter-item expanded affix "><li class="part-title">Examples</li><li class="chapter-item expanded "><a href="../../examples/javascript.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../../examples/python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/index.html"><strong aria-hidden="true">5.</strong> Unofficial Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../examples/unofficial/bdfd.html"><strong aria-hidden="true">5.1.</strong> BDFD</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/csharp.html"><strong aria-hidden="true">5.2.</strong> C#</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/c++.html"><strong aria-hidden="true">5.3.</strong> C++</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/dart.html" class="active"><strong aria-hidden="true">5.4.</strong> Dart</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/rust.html"><strong aria-hidden="true">5.5.</strong> Rust</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Legal</li><li class="chapter-item expanded "><a href="../../legal/privacy.html"><strong aria-hidden="true">6.</strong> Privacy Policy</a></li><li class="chapter-item expanded "><a href="../../legal/terms.html"><strong aria-hidden="true">7.</strong> Terms and Conditions</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="nekosbest">NekosBest (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Dark</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">nekos.best API</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/nekos-best/docs" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!-- markdownlint-disable MD014 -->
+<h1 id="dart"><a class="header" href="#dart"><a href="https://nekos.best/discord?ref=docs"><img src="https://cdn.discordapp.com/emojis/1037721964162330764.webp?size=32&amp;quality=lossless" alt="CS" /></a> Dart</a></h1>
+<hr />
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<p>Add the Dart <a href="https://pub.dev/packages/nekos_best"><code>nekos_best</code></a> package to your project:</p>
+<pre><code class="language-bash">$ dart pub add nekos_best
+</code></pre>
+<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
+<p>Import the package to your project and use the methods.</p>
+<pre><code class="language-c">import 'package:nekos_best/nekos_best.dart' as nb;
+
+void main() async {
+    var neko = await nb.fetch(endpoint: 'neko');
+    print(neko);
+}
+</code></pre>
+<p>The package only exports a single function <code>fetch</code></p>
+<pre><code class="language-c">var random = nb.fetch();
+var single_neko = nb.fetch(endpoint: 'neko');
+var multi_neko = nb.fetch(endpoint: 'neko', amount: 5);
+</code></pre>
+<p>You can specify the amount of results you want, or the category from which to get the result. Both are optional. By default, amount is set to 1. If the endpoint is unspecified, it uses a randomly chosen endpoint.</p>
+<p>The function returns a list of class <a href="https://github.com/Yakiyo/nekos_best_dart/blob/main/README.md#response">NBResponse</a>. You can access it's fields with dot notation.</p>
+<pre><code class="language-c">var baka = await nb.fetch(endpoint: 'baka');
+// It always returns a list of NBResponse, so 
+// we need to get the first element from the list
+print(&quot;url: ${baka[0].url}, source: ${baka[0].anime_name}&quot;);
+</code></pre>
+<p>More details on the package can be found in the repo's <a href="https://github.com/Yakiyo/nekos_best_dart#readme">README</a>. The example is in the <a href="https://github.com/Yakiyo/nekos_best_dart/tree/main/example">example</a> directory.</p>
+<h3 id="example-without-wrapper"><a class="header" href="#example-without-wrapper">Example without wrapper</a></h3>
+<p>Add <a href="https://pub.dev/packages/http">http</a> to your project and import it.</p>
+<pre><code class="language-c">import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
+
+void main() async {
+    var url = Uri.parse('https://nekos.best/api/v2/neko');
+    var res = await http.get(url);
+    var neko = convert.jsonDecode(res.body) as Map&lt;String, dynamic&gt;;
+    print(neko['results'][0]);
+}
+</code></pre>
+<h2 id="about"><a class="header" href="#about">About</a></h2>
+<blockquote>
+<p>Example added by: <a href="https://github.com/Yakiyo"><strong>Yakiyo</strong></a></p>
+<p>Package source code is available on <a href="https://github.com/Yakiyo/nekos_best_dart"><strong>Github</strong></a></p>
+<p><a href="https://pub.dev/packages/nekos_best"><img src="https://img.shields.io/pub/v/nekos_best?logo=dart&amp;style=flat-square&amp;label=Version" alt="NekosBest" /></a> <a href="https://pub.dev/packages/nekos_best"><img src="https://img.shields.io/pub/popularity/nekos_best?color=blue&amp;logo=dart&amp;style=flat-square&amp;label=Popularity" alt="NekosBest" /></a> <a href="https://github.com/Yakiyo/nekos_best_dart"><img src="https://img.shields.io/github/stars/Yakiyo/nekos_best_dart?color=yellow&amp;label=Stars&amp;logo=github&amp;style=flat-square" alt="NekosBest" /></a></p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../examples/unofficial/c++.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../../examples/unofficial/rust.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../examples/unofficial/c++.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../../examples/unofficial/rust.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
