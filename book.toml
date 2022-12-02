@@ -11,7 +11,7 @@ default-theme = "nekosbest"
 preferred-dark-theme = "nekosbest"
 
 git-repository-icon = "fa-github"
-git-repository-url = "https://github.com/nekos-best/docs"
+git-repository-url = "https://github.com/korivirtual/docs"
 
 [output.html.search]
 limit-results = 10
