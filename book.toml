@@ -5,7 +5,7 @@ title = "nekos.best API"
 description = "The official nekos.best API documentation."
 
 [output.html]
-cname = "docs.nekos.best"
+cname = "docs.kori-vr.live"
 
 default-theme = "nekosbest"
 preferred-dark-theme = "nekosbest"
