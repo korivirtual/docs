@@ -1,4 +1,4 @@
-# NekosBest's [documentation](https://docs.nekos.best)
+# NekosBest's [documentation](https://docs.kori-vr.live/)
 
 ## Table of Contents
 
@@ -9,7 +9,7 @@
 
 ## Introduction
 
-Welcome to [nekos.best](https://nekos.best)'s documentation repository.
+Welcome to [nekos.best](https://docs.kori-vr.live/)'s documentation repository.
 
 If you have any questions, feel free to ask them in the [Discord server](https://nekos.best/discord?ref=docs).
 
