@@ -9,9 +9,9 @@
 
 ## Introduction
 
-Welcome to [nekos.best](https://docs.kori-vr.live/)'s documentation repository.
+Welcome to [neko bot](https://docs.kori-vr.live/)'s documentation repository.
 
-If you have any questions, feel free to ask them in the [Discord server](https://nekos.best/discord?ref=docs).
+If you have any questions, feel free to ask them in the [Discord server](https://discord.gg/UMRANh2tSU).
 
 ## Contributing
 
